@@ -1,4 +1,6 @@
-import java.util.ArrayList;
+import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
 
 public class Game {
 
@@ -20,16 +22,49 @@ public class Game {
         this.players.add(player);
     }
 
-    public Player dealerDealsCardsToPlayers() {
+    public void dealerDealsCardsToPlayers() {
         dealer.getsCardsFromDeck(deck);
-        Card card = dealer.dealCard();
-        for(Player player: this.players) {
+        for (Player player : this.players) {
+            Card card = dealer.dealCard();
             player.addCard(card);
         }
-        if (players.get(0).cardInHandValue() > players.get(1).cardInHandValue()){
-            return players.get(0);
-        }
-            else return players.get(1);
     }
+
+//    public Player winner() {
+//        if (players.get(0).cardInHandValue() > players.get(1).cardInHandValue()){
+//            return players.get(0);
+//        } else {
+//            return players.get(1);
+//        }
+//    }
+
+
+    public HashMap<Player, Integer> playerHashMap() {
+        HashMap<Player, Integer> playerValues = new HashMap<>();
+        for (Player player : this.players) {
+            playerValues.put(player, player.cardInHandValue());
+        }
+        return playerValues;
+    }
+
+
+    public Player winner(){
+        HashMap<Player, Integer> playerValues = new HashMap<>();
+        for (Player player : this.players) {
+            playerValues.put(player, player.cardInHandValue());
+        }
+
+        Player winningPlayer = Collections.max(playerValues.entrySet(), Map.Entry.comparingByValue()).getKey();
+
+        return winningPlayer;
+    }
+
+
+
+
+
+
+
+
 
 }

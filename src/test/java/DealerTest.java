@@ -20,7 +20,7 @@ public class DealerTest {
     @Test
     public void getsCards() {
         dealer.getsCardsFromDeck(deck);
-        assertEquals(2, dealer.countDealerCards());
+        assertEquals(52, dealer.countDealerCards());
     }
 
     @Test
