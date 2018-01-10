@@ -1,12 +1,6 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Game {
-
-    // players
-    // deck
-    // dealer
-    // decide who wins
 
     private ArrayList<Player> players;
     private Deck deck;
@@ -37,7 +31,5 @@ public class Game {
         }
             else return players.get(1);
     }
-
-
 
 }
