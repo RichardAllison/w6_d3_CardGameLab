@@ -9,18 +9,12 @@ public class DealerTest {
 
     Dealer dealer;
     Deck deck;
-    Card card;
-    Card card2;
 
     @Before
     public void before(){
         dealer = new Dealer();
         ArrayList<Card> cards = new ArrayList<>();
-        card = new Card(Suit.CLUBS, Rank.ACE);
-        card2 = new Card(Suit.CLUBS, Rank.ACE);
-        cards.add(card);
-        cards.add(card2);
-        deck = new Deck(cards);
+        deck = new Deck();
     }
 
     @Test

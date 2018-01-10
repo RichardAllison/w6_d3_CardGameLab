@@ -22,4 +22,9 @@ public class CardTest {
         assertEquals(Rank.THREE, card.getRank());
     }
 
+    @Test
+    public void hasValueOf3() {
+        assertEquals(3, card.getRank().getValue());
+    }
+
 }

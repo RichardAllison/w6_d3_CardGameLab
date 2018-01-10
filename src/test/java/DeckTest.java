@@ -14,11 +14,7 @@ public class DeckTest {
     @Before
     public void before() {
         ArrayList<Card> cards = new ArrayList<>();
-        deck = new Deck(cards);
-        card = new Card(Suit.CLUBS, Rank.ACE);
-        card2 = new Card(Suit.CLUBS, Rank.ACE);
-        cards.add(card);
-        cards.add(card2);
+        deck = new Deck();
     }
 
     @Test

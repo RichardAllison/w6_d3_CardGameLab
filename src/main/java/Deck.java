@@ -5,10 +5,21 @@ public class Deck {
 
     private ArrayList<Card> cards;
     private Card card;
+    private Card card2;
 
-    public Deck(ArrayList<Card> cards){
-        this.cards = cards;
+
+    public Deck(){
+        this.cards = new ArrayList<>();
+        card = new Card(Suit.CLUBS, Rank.ACE);
+        card2 = new Card(Suit.HEARTS, Rank.TEN);
+        cards.add(card);
+        cards.add(card2);
     }
+
+//    public Deck(ArrayList<Card> cards){
+//        this.cards = cards;
+//    }
+
 
     public int countCards() {
         return cards.size();
