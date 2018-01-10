@@ -26,16 +26,16 @@ public class Game {
         this.players.add(player);
     }
 
-    public void dealerDealsCardsToPlayers() {
+    public Player dealerDealsCardsToPlayers() {
         dealer.getsCardsFromDeck(deck);
         Card card = dealer.dealCard();
         for(Player player: this.players) {
             player.addCard(card);
         }
-//        if (players.cardInHandValue > players(1).cardInHandValue){
-//            return players(0);
-//        }
-//            else return players(1);
+        if (players.get(0).cardInHandValue() > players.get(1).cardInHandValue()){
+            return players.get(0);
+        }
+            else return players.get(1);
     }
 
 
