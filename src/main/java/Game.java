@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Game {
 
@@ -25,12 +26,18 @@ public class Game {
         this.players.add(player);
     }
 
-    public void dealerDealsCardsToPlayer() {
+    public void dealerDealsCardsToPlayers() {
         dealer.getsCardsFromDeck(deck);
         Card card = dealer.dealCard();
         for(Player player: this.players) {
             player.addCard(card);
         }
-
+//        if (players.cardInHandValue > players(1).cardInHandValue){
+//            return players(0);
+//        }
+//            else return players(1);
     }
+
+
+
 }

@@ -22,4 +22,12 @@ public class Player {
     public int handCardCount() {
        return this.hand.size();
     }
+
+    public int cardInHandValue() {
+        int value = 0;
+        for(Card card: this.hand) {
+            value += card.getRank().getValue();
+        }
+        return value;
+    }
 }

@@ -27,5 +27,20 @@ public class GameTest {
         assertEquals(2, game.playerCount());
     }
 
+    @Test
+    public void canDealCards() {
+        game.addPlayer(player1);
+        game.addPlayer(player2);
+        game.dealerDealsCardsToPlayers();
+        assertEquals(1, player1.handCardCount());
+        assertEquals(1, player2.handCardCount());
+    }
 
+    @Test
+    public void canCheckCardValues() {
+        game.addPlayer(player1);
+        game.addPlayer(player2);
+        game.dealerDealsCardsToPlayers();
+
+    }
 }
