@@ -43,9 +43,12 @@ public class GameTest {
     }
 
     @Test
-    public void canCheckWinner() {
+    public void canCheckWinners() {
         game.dealerDealsCardsToPlayers();
-        System.out.println(game.winner().cardInHandValue());
+//        System.out.println(game.winner());
+//        System.out.println(game.winner().cardInHandValue());
+        System.out.println(game.winners());
+        System.out.println(game.winners().get(0).cardInHandValue());
 
         System.out.println(game.playerHashMap());
 

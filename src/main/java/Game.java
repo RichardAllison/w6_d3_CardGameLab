@@ -48,15 +48,30 @@ public class Game {
     }
 
 
-    public Player winner(){
+//    public Player winner(){
+//        HashMap<Player, Integer> playerValues = new HashMap<>();
+//        for (Player player : this.players) {
+//            playerValues.put(player, player.cardInHandValue());
+//        }
+//
+//        Player winningPlayer = Collections.max(playerValues.entrySet(), Map.Entry.comparingByValue()).getKey();
+//
+//        return winningPlayer;
+//    }
+
+    public ArrayList<Player> winners(){
         HashMap<Player, Integer> playerValues = new HashMap<>();
         for (Player player : this.players) {
             playerValues.put(player, player.cardInHandValue());
         }
 
-        Player winningPlayer = Collections.max(playerValues.entrySet(), Map.Entry.comparingByValue()).getKey();
-
-        return winningPlayer;
+        ArrayList<Player> winningPlayers = new ArrayList<>();
+        for (HashMap.Entry<Player, Integer> entry : playerValues.entrySet()) {
+            if (entry.getValue() == (Collections.max(playerValues.values()))) {
+                winningPlayers.add(entry.getKey());
+            }
+        }
+        return winningPlayers;
     }
 
 
