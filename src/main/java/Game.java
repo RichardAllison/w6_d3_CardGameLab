@@ -1,6 +1,4 @@
 import java.util.*;
-import java.util.Collections;
-import java.util.HashMap;
 
 public class Game {
 
@@ -22,14 +20,29 @@ public class Game {
         this.players.add(player);
     }
 
+//  // Deal one card to each player
     public void dealerDealsCardsToPlayers() {
         dealer.getsCardsFromDeck(deck);
+
         for (Player player : this.players) {
             Card card = dealer.dealCard();
             player.addCard(card);
         }
     }
 
+//  // Deal all cards to players until no cards in deck:
+//    public void dealerDealsCardsToPlayers() {
+//        dealer.getsCardsFromDeck(deck);
+//        do {
+//            for (Player player : this.players) {
+//                Card card = dealer.dealCard();
+//                player.addCard(card);
+//            }
+//        } while (dealer.countDealerCards() > 0);
+//    }
+
+
+//  // Winner if only two players
 //    public Player winner() {
 //        if (players.get(0).cardInHandValue() > players.get(1).cardInHandValue()){
 //            return players.get(0);
@@ -39,6 +52,7 @@ public class Game {
 //    }
 
 
+//  // Scores for each player
     public HashMap<Player, Integer> playerHashMap() {
         HashMap<Player, Integer> playerValues = new HashMap<>();
         for (Player player : this.players) {
@@ -47,7 +61,7 @@ public class Game {
         return playerValues;
     }
 
-
+//  // winner, returns only first winner if multiple have same score
 //    public Player winner(){
 //        HashMap<Player, Integer> playerValues = new HashMap<>();
 //        for (Player player : this.players) {
@@ -59,15 +73,22 @@ public class Game {
 //        return winningPlayer;
 //    }
 
+
+//  // Return winner or multiple winners
     public ArrayList<Player> winners(){
+
         HashMap<Player, Integer> playerValues = new HashMap<>();
+
         for (Player player : this.players) {
             playerValues.put(player, player.cardInHandValue());
         }
+        int highestHandValue = (Collections.max(playerValues.values()));
+
 
         ArrayList<Player> winningPlayers = new ArrayList<>();
+
         for (HashMap.Entry<Player, Integer> entry : playerValues.entrySet()) {
-            if (entry.getValue() == (Collections.max(playerValues.values()))) {
+            if (entry.getValue() == highestHandValue) {
                 winningPlayers.add(entry.getKey());
             }
         }

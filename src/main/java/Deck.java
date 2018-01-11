@@ -18,13 +18,8 @@ public class Deck {
                 this.cards.add(card);
             }
 
-
         }
-//
-//        card = new Card(Suit.CLUBS, Rank.ACE);
-//        card2 = new Card(Suit.HEARTS, Rank.TEN);
-//        cards.add(card);
-//        cards.add(card2);
+
     }
 
 //    public Deck(ArrayList<Card> cards){

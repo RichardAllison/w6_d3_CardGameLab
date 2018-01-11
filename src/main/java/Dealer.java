@@ -27,4 +27,7 @@ public class Dealer {
         return removedCard;
     }
 
+    public Object getDealerCards() {
+        return dealerCards;
+    }
 }

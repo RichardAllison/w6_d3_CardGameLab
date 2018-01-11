@@ -18,8 +18,15 @@ public class DealerTest {
     }
 
     @Test
-    public void getsCards() {
+    public void getsCardsFromDeck() {
         dealer.getsCardsFromDeck(deck);
+        assertEquals(52, dealer.countDealerCards());
+    }
+
+    @Test
+    public void getCards() {
+        dealer.getsCardsFromDeck(deck);
+        dealer.getDealerCards();
         assertEquals(52, dealer.countDealerCards());
     }
 
